@@ -15,9 +15,7 @@ app.use(cors());
 // MongoDB connection
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://admin:enuThUQ0PpaCKswG@cluster0.n7gwjes.mongodb.net/lawproj"
-    );
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("DB connected");
   } catch (err) {
     console.log(err.message);
